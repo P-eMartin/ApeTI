@@ -45,7 +45,7 @@ md5sum -c data.md5
 
 4. unzip the file to the database folder:
 ```
-unzip -d database data.zip
+unzip -d data data.zip
 ```
 
 You should obtain a database folder with the thermal images under the NPY format and the annotations in JSON format.
