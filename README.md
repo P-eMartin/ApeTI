@@ -79,7 +79,7 @@ For face detection, the mAP uses ten Intersections over Union (IoU) thresholds: 
  no ROI                    | 0                | 0                   | 0                   | .128              
  Thresh (35.6)             | 0                | 0                   | 0                   | .183              
  BlazeFace                 | .007             | .037                | 0                   | .398              
- Thresh (36.5) + BlazeFace | .069             | .273                | .003                | .509              
+ Thresh (36.5) + BlazeFace | .136             | .512                | .025                | .576              
 
 ### Landmark Regression
 
