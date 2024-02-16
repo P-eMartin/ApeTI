@@ -1,0 +1,32 @@
+dataset_info = dict(
+    dataset_name='ApeTI',
+    paper_info=dict(
+        author='Pierre-Etienne Martin',
+        title='',
+        container='',
+        year='2023',
+        homepage='',
+    ),
+    keypoint_info={
+        0: dict(name='rhinion', id=0, color=[0, 0, 255], type='upper', swap=''),
+        1: dict(name='supratik_break', id=1, color=[0, 0, 255], type='upper', swap=''),
+        2: dict(name='supratik_lobule', id=2, color=[0, 0, 255], type='upper', swap=''),
+        3: dict(name='tip', id=3, color=[255, 0, 0], type='upper', swap=''),
+        4: dict(name='columela_left', id=4, color=[0, 0, 255], type='upper', swap='columela_right'),
+        5: dict(name='columela_centre_left', id=5, color=[0, 0, 255], type='upper', swap='columela_centre_right'),
+        6: dict(name='columela_centre', id=6, color=[0, 0, 255], type='upper', swap=''),
+        7: dict(name='columela_centre_right', id=7, color=[0, 0, 255], type='upper', swap='columela_centre_left'),
+        8: dict(name='columela_right', id=8, color=[0, 0, 255], type='upper', swap='columela_left'),
+    },
+    skeleton_info={
+        0: dict(link=('rhinion', 'supratik_break'), id=0, color=[0, 0, 255]),
+        1: dict(link=('supratik_break', 'supratik_lobule'), id=1, color=[0, 0, 255]),
+        2: dict(link=('supratik_lobule', 'tip'), id=2, color=[255, 0, 0]),
+        3: dict(link=('tip', 'columela_centre'), id=3, color=[255, 0, 0]),
+        4: dict(link=('columela_left', 'columela_centre_left'), id=4, color=[0, 0, 255]),
+        5: dict(link=('columela_centre_left', 'columela_centre'), id=5, color=[0, 0, 255]),
+        6: dict(link=('columela_centre', 'columela_centre_right'), id=6, color=[0, 0, 255]),
+        7: dict(link=('columela_centre_right', 'columela_right'), id=7, color=[0, 0, 255]),
+    },
+    joint_weights=[1.] * 8,
+    sigmas=[.1] * 8)
