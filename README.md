@@ -81,19 +81,23 @@ For face detection, the mAP uses ten Intersections over Union (IoU) thresholds: 
  BlazeFace                 | .007             | .037                | 0                   | .398              
  Thresh (36.5) + BlazeFace | .069             | .273                | .003                | .509              
 
-
-
 ### Landmark Regression
 
 For landmark regression, the mAP uses ten Object Keypoint Similarity (OKS) thresholds: IoU=.50:.05:.95.
+
+#### With Ground Truth Face Location
 
  **Method**                           | **mAP**  | **AP 50** | **AP 75** | **mOKS** 
 --------------------------------------|----------|-----------|-----------|----------
  GT + Tina                            | .989     | .989      | .989      | .524     
  GT+10% + Tina                        | .989     | .989      | .989      | .523     
  **GT-10% + Tina**                    | **.995** | **1**     | **1**     | **.524** 
- no ROI + Tina                        | .987     | .988      | .988      | .532     
+
+#### Without Ground Truth Face Location
+
+ **Method**                           | **mAP**  | **AP 50** | **AP 75** | **mOKS** 
 --------------------------------------|----------|-----------|-----------|----------
+ no ROI + Tina                        | .987     | .988      | .988      | .532     
  **Thresh (29.8) + Tina**             | **.989** | **.990**  | **.990**  | **.532** 
  Tifa + Tina                          | .980     | .980      | .980      | .524     
  Tifa+10% + Tina                      | .980     | .980      | .980      | .523     
@@ -104,7 +108,7 @@ For landmark regression, the mAP uses ten Object Keypoint Similarity (OKS) thres
 
 ## Submit your results
 
-Do not hesitate to share your model's performance so we can update the leaderboard.
+Do not hesitate to share your methods' performance so we can update the leaderboard.
 
 ## Cite this work
 
