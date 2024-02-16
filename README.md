@@ -45,7 +45,68 @@ md5sum -c data.md5
 
 4. unzip the file to the database folder:
 ```
-unzip -d data data.zip
+unzip data.zip
 ```
 
-You should obtain a database folder with the thermal images under the NPY format and the annotations in JSON format.
+You should obtain a data folder with the thermal images encoded using [NPY format](https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html) and the annotations under the [COCO annotation JSON format](https://cocodataset.org/#format-data).
+
+### Optional Steps
+5. Run md5sum on the unziped content:
+```
+find data -type f -exec md5sum '{}' + >data_checksum2.txt
+```
+
+6. Check consistency using the provided checksum file.
+```
+diff <(sort data_checksum.txt) <(sort data_checksum2.txt)
+```
+
+
+## Leaderboard
+
+We evaluate the results on the test set using the mean Average Precision metric (mAP) for both detection and landmark regression tasks.
+The mAP uses several Intersections over Union (IoU) and Object Keypoint Similarity (OKS): mAP at IoU=.50:.05:.95 for  and mAP at OKS=.50:.05:.95 for landmarks regression. 
+
+### Face Detection
+
+For face detection, the mAP uses ten Intersections over Union (IoU) thresholds: IoU=.50:.05:.95.
+
+ **Method**                | **mAP**          | **mAP 50**          | **mAP 75**          | **mIoU** 
+---------------------------|------------------|---------------------|---------------------|-------------------
+ GT+10%                    | .7               | 1                   | 1                   | .836              
+ GT$-10%                   | .7               | 1                   | 1                   | .821              
+ **Tifa**                  | **.744**         | **.980**            | **.902**            | **.868**           
+ no ROI                    | 0                | 0                   | 0                   | .128              
+ Thresh (35.6)             | 0                | 0                   | 0                   | .183              
+ BlazeFace                 | .007             | .037                | 0                   | .398              
+ Thresh (36.5) + BlazeFace | .069             | .273                | .003                | .509              
+
+
+
+### Landmark Regression
+
+For landmark regression, the mAP uses ten Object Keypoint Similarity (OKS) thresholds: IoU=.50:.05:.95.
+
+ **Method**                           | **mAP**  | **AP 50** | **AP 75** | **mOKS** 
+--------------------------------------|----------|-----------|-----------|----------
+ GT + Tina                            | .989     | .989      | .989      | .524     
+ GT+10% + Tina                        | .989     | .989      | .989      | .523     
+ **GT-10% + Tina**                    | **.995** | **1**     | **1**     | **.524** 
+ no ROI + Tina                        | .987     | .988      | .988      | .532     
+ **Thresh (29.8) + Tina**             | **.989** | **.990**  | **.990**  | **.532** 
+ Tifa + Tina                          | .980     | .980      | .980      | .524     
+ Tifa+10% + Tina                      | .980     | .980      | .980      | .523     
+ Tifa-10% + Tina                      | .980     | .980      | .980      | .524     
+ Thresh (29.8) + Tifa + Tina          | .952     | .953      | .953      | .518     
+ BlazeFace + FaceMesh                 | .336     | .652      | .312      | .398     
+ Thresh (36.5) + BlazeFace + FaceMesh | .566     | .819      | .617      | .41      
+
+## Submit your results
+
+Do not hesitate to share your model's performance so we can update the leaderboard.
+
+## Cite this work
+
+Work in progress.
+
+
