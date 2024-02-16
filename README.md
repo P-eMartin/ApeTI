@@ -36,7 +36,7 @@ cd ApeTI
 ```
 curl -X GET -u "MnD33qD9ZxCYdJL:xkL4ezPMsw" -H 'X-Requested-With: XMLHttpRequest' 'https://share.eva.mpg.de/public.php/webdav/data.zip' -o data.zip
 ```
-Alternatively, you can use your browser using this [link](https://share.eva.mpg.de/index.php/s/MnD33qD9ZxCYdJL) and this password: xkL4ezPMsw .
+Alternatively, you can use your browser using this [link](https://share.eva.mpg.de/index.php/s/MnD33qD9ZxCYdJL) and this password: xkL4ezPMsw
 
 3. Check its content with md5sum:
 ```
@@ -60,7 +60,6 @@ find data -type f -exec md5sum '{}' + >data_checksum2.txt
 ```
 diff <(sort data_checksum.txt) <(sort data_checksum2.txt)
 ```
-
 
 ## Leaderboard
 
@@ -109,6 +108,11 @@ For landmark regression, the mAP uses ten Object Keypoint Similarity (OKS) thres
 ## Submit your results
 
 Do not hesitate to share your methods' performance so we can update the leaderboard.
+
+## Tina and Tifa
+The implementations of the models have been carried out using [MMLab](https://github.com/open-mmlab). We share the configuration files along with our extra pipeline functions and dataset registration in the config folder.
+
+The weights of both models are available on our [Nexcloud](https://share.eva.mpg.de/index.php/s/MnD33qD9ZxCYdJL) with password: xkL4ezPMsw
 
 ## Cite this work
 
