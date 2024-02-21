@@ -121,6 +121,7 @@ Work in progress.
 ## License
 
 CC-BY
+
 <img src="by.png" width=15%>
 
 
