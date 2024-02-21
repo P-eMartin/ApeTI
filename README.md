@@ -120,7 +120,8 @@ Work in progress.
 
 ## License
 
-CC-BY: <img src="by.png" width=10% height=10%>
+CC-BY
+<img src="by.png" width=15%>
 
 
 
