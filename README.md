@@ -118,4 +118,9 @@ The weights of both models are available on our [Nexcloud](https://share.eva.mpg
 
 Work in progress.
 
+## License
+
+CC-BY: <img src="by.png" width=10% height=10%>
+
+
 
