@@ -1,8 +1,6 @@
 # ApeTI
 ApeTI: A Thermal Image Dataset for Face and Nose Segmentation with Apes
 
-This repository is a work in progress. The paper linked to this repository is currently under revision.
-
 ApeTI dataset was built with the aim of retrieving physiological signals such as heart rate, breath rate, and cognitive load from thermal images of great apes. We want to develop computer vision tools that psychologists and animal behaviour researchers can use to retrieve physiological signals non-invasively.
 Our goal is to increase the use of thermal imaging modality in the community and avoid using more invasive recording methods to answer research questions. The first step to retrieving physiological signals from thermal imaging is their spatial segmentation to then analyse the time series of the regions of interest.
 For this purpose, we present a Thermal Imaging dataset based on recordings of chimpanzees with their face and nose annotated using a bounding box and nine landmarks.
@@ -22,7 +20,7 @@ The original images and transformation details are available upon request.
 ![](dataset_sample.png)
 
 ## Download
-The dataset is available on our Nextcloud instance.
+The dataset is available on a dedicated [Zenodo repository](https://zenodo.org/records/11192141).
 You may download it using your terminal and check its consistency.
 A step-by-step instruction.
 
@@ -32,23 +30,37 @@ git clone https://github.com/ccp-eva/ApeTI.git
 cd ApeTI
 ```
 
-2. Download the database.zip file from our Nextcloud:
+2. Download the 11192141.zip file from Zenodo:
 ```
-curl -X GET -u "MnD33qD9ZxCYdJL:xkL4ezPMsw" -H 'X-Requested-With: XMLHttpRequest' 'https://share.eva.mpg.de/public.php/webdav/data.zip' -o data.zip
+wget --content-disposition https://zenodo.org/api/records/11192141/files-archive
 ```
-Alternatively, you can use your browser using this [link](https://share.eva.mpg.de/index.php/s/MnD33qD9ZxCYdJL) and this password: xkL4ezPMsw
+Alternatively, you can use your browser using this [link](https://zenodo.org/api/records/11192141/files-archive).
 
-3. Check its content with md5sum:
+3. Check your download consistency with md5sum:
 ```
-md5sum -c data.md5
+md5sum -c 11192141.md5
 ```
 
-4. unzip the file to the database folder:
+4. unzip the downloaded archive:
+```
+unzip 11192141.zip
+```
+
+You should obtain a data.zip archive, with the md5sum files, the weights of the models and the data agreement regarding the usage of this dataset.
+
+5. Check the data.zip consistency with md5sum:
+```
+md5sum -c 11192141.md5
+```
+
+5. unzip the data.zip archive:
 ```
 unzip data.zip
 ```
 
 You should obtain a data folder with the thermal images encoded using [NPY format](https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html) and the annotations under the [COCO annotation JSON format](https://cocodataset.org/#format-data).
+
+md5sum -c 11192141.md5
 
 ### Optional Steps
 5. Run md5sum on the unziped content:
