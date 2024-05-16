@@ -40,6 +40,7 @@ Alternatively, you can use your browser using this [link](https://zenodo.org/api
 ```
 md5sum -c 11192141.md5
 ```
+If it fails, redo step 2.
 
 4. unzip the downloaded archive:
 ```
@@ -50,28 +51,24 @@ You should obtain a data.zip archive, with the md5sum files, the weights of the 
 
 5. Check the data.zip consistency with md5sum:
 ```
-md5sum -c 11192141.md5
+md5sum -c data.md5
 ```
+If it fails, redo step 4.
 
-5. unzip the data.zip archive:
+6. unzip the data.zip archive:
 ```
 unzip data.zip
 ```
 
 You should obtain a data folder with the thermal images encoded using [NPY format](https://numpy.org/doc/stable/reference/generated/numpy.lib.format.html) and the annotations under the [COCO annotation JSON format](https://cocodataset.org/#format-data).
 
-md5sum -c 11192141.md5
+7. Check the data folder content consistency with md5sum:
+```
+md5sum -c data_checksum.txt
+```
+If it fails, redo step 6.
 
-### Optional Steps
-5. Run md5sum on the unziped content:
-```
-find data -type f -exec md5sum '{}' + >data_checksum2.txt
-```
-
-6. Check consistency using the provided checksum file.
-```
-diff <(sort data_checksum.txt) <(sort data_checksum2.txt)
-```
+You are now ready to use the dataset. The thermal images are encoded using nympy format. You may visualize them as images but they need to be normalized first. Several methods exist such as using min and max of the image or pre-defined values. Refer to the paper in the "Cite this work" section for more guidance.
 
 ## Leaderboard
 
@@ -126,13 +123,73 @@ The implementations of the models have been carried out using [MMLab](https://gi
 
 The weights of both models are available on our [Nexcloud](https://share.eva.mpg.de/index.php/s/MnD33qD9ZxCYdJL) with password: xkL4ezPMsw
 
-## Cite this work
+## To cite this work
 
-Work in progress.
+### Paper:
+
+Martin, P.-E., Kachel, G., Wieg, N., Eckert, J., & Haun, D. ApeTI: A Thermal Image Dataset for Face and Nose Segmentation with Apes. Signals 2024, 5, 147-164. https://doi.org/10.3390/signals5010008 
+```
+@Article{signals5010008,
+ AUTHOR = {Martin, Pierre-Etienne and
+           Kachel, Gregor and
+           Wieg, Nicolas and
+           Eckert, Johanna and
+           Haun, Daniel},
+ TITLE = {ApeTI: A Thermal Image Dataset for Face and Nose Segmentation with Apes},
+ JOURNAL = {Signals},
+ VOLUME = {5},
+ YEAR = {2024},
+ NUMBER = {1},
+ PAGES = {147--164},
+ URL = {https://www.mdpi.com/2624-6120/5/1/8},
+ ISSN = {2624-6120},
+ ABSTRACT = {The ApeTI dataset was built with the aim of retrieving physiological signals such as heart rate, breath rate, and cognitive load from thermal images of great apes. We want to develop computer vision tools that psychologists and animal behavior researchers can use to retrieve physiological signals noninvasively. Our goal is to increase the use of a thermal imaging modality in the community and avoid using more invasive recording methods to answer research questions. The first step to retrieving physiological signals from thermal imaging is their spatial segmentation to then analyze the time series of the regions of interest. For this purpose, we present a thermal imaging dataset based on recordings of chimpanzees with their face and nose annotated using a bounding box and nine landmarks. The face and landmarks’ locations can then be used to extract physiological signals. The dataset was acquired using a thermal camera at the Leipzig Zoo. Juice was provided in the vicinity of the camera to encourage the chimpanzee to approach and have a good view of the face. Several computer vision methods are presented and evaluated on this dataset. We reach mAPs of 0.74 for face detection and 0.98 for landmark estimation using our proposed combination of the Tifa and Tina models inspired by the HRNet models. A proof of concept of the model is presented for physiological signal retrieval but requires further investigation to be evaluated. The dataset and the implementation of the Tina and Tifa models are available to the scientific community for performance comparison or further applications.},
+ DOI = {10.3390/signals5010008}
+}
+
+```
+
+### Dataset:
+
+Martin, P.-E., Kachel, G., Wieg, N., Eckert, J., & Haun, D. (2024). ApeTI dataset and models weights [Data set]. Zenodo. https://doi.org/10.5281/zenodo.11192141
+
+```
+@dataset{martin_2024_11192141,
+  author       = {Martin, Pierre-Etienne and
+                  Kachel, Gregor and
+                  Wieg, Nicolas and
+                  Eckert, Johanna and
+                  Haun, Daniel},
+  title        = {ApeTI dataset and models weights},
+  month        = may,
+  year         = 2024,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.11192141},
+  url          = {https://doi.org/10.5281/zenodo.11192141}
+}
+```
+### Software:
+
+Pierre-Etienne Martin. (2024). ccp-eva/ApeTI: Software (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.xxxxxx
+
+```
+@software{pierre_etienne_martin_2024_xxxxx,
+  author       = {Pierre-Etienne Martin},
+  title        = {ccp-eva/ApeTI: Software},
+  month        = may,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.xxxxxx},
+  url          = {https://doi.org/10.5281/zenodo.xxxxxx}
+}
+```
+
+Get in touch with us directly if you have any questions: pierre_etienne_martin (at) eva.mpg.de.
 
 ## License
 
-CC-BY
+CC-BY. Please read the data agreement before usage.
 
 <img src="by.png" width=15%>
 
