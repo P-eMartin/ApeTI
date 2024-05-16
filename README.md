@@ -170,18 +170,18 @@ Martin, P.-E., Kachel, G., Wieg, N., Eckert, J., & Haun, D. (2024). ApeTI datase
 ```
 ### Software:
 
-Pierre-Etienne Martin. (2024). ccp-eva/ApeTI: Software (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.xxxxxx
+Pierre-Etienne Martin. (2024). ccp-eva/ApeTI: Software (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.11204561
 
 ```
-@software{pierre_etienne_martin_2024_xxxxx,
+@software{pierre_etienne_martin_2024_11204561,
   author       = {Pierre-Etienne Martin},
   title        = {ccp-eva/ApeTI: Software},
   month        = may,
   year         = 2024,
   publisher    = {Zenodo},
   version      = {v1.0.0},
-  doi          = {10.5281/zenodo.xxxxxx},
-  url          = {https://doi.org/10.5281/zenodo.xxxxxx}
+  doi          = {10.5281/zenodo.11204561},
+  url          = {https://doi.org/10.5281/zenodo.11204561}
 }
 ```
 
