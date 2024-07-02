@@ -134,7 +134,7 @@ Martin, P.-E., Kachel, G., Wieg, N., Eckert, J., & Haun, D. ApeTI: A Thermal Ima
            Kachel, Gregor and
            Wieg, Nicolas and
            Eckert, Johanna and
-           Haun, Daniel},
+           Haun, Daniel B. M.},
  TITLE = {ApeTI: A Thermal Image Dataset for Face and Nose Segmentation with Apes},
  JOURNAL = {Signals},
  VOLUME = {5},
@@ -159,7 +159,7 @@ Martin, P.-E., Kachel, G., Wieg, N., Eckert, J., & Haun, D. (2024). ApeTI datase
                   Kachel, Gregor and
                   Wieg, Nicolas and
                   Eckert, Johanna and
-                  Haun, Daniel},
+                  Haun, Daniel B. M.},
   title        = {ApeTI dataset and models weights},
   month        = may,
   year         = 2024,
